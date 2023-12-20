@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <link rel="shortcut icon" type="x-icon" href="./assets/images/weather_icons/02d.png">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>weatherPro</title>
+   <meta name="title" content="weatherPro">
+   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+   <meta name="description" content="weatherPro is a weather app made by sachin">
+
+   <!-- google fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<!-- fontawsome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- style -->
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+
+
+
+
+<body>
+   
+   <!-- header -->
+   <div class="header">
+       <div class="container">
+           <a href="#" class="logo">
+               <img src="assets/images/logo.png" width="390" height="60" alt="logo">
+           </a>
+
+           <div class="search-view" data-search-view>
+               <div class="search-wrapper">
+                <div class="mix">
+                    <input type="search" name="search" placeholder="search-city ..."
+                    autocapitalize="off" class="search-field " id="cityInput">
+ 
+                    <button class="searchbutton " id="searchButton">search</button>
+                </div>
+                <button class="icon-btn leading-icon has-state" arrow-btn>
+                    <span class="m-icon"><i class="fa-solid fa-arrow-left"></i></span>
+                </button>
+                   
+                   <span class="m-icon leading-icon mag"><i class="fa-solid fa-magnifying-glass"></i></span>
+
+                  
+                
+
+               </div>
+
+               <div class="search-result">
+<!--                    
+                   <ul class="view-list">
+
+                      <li class="view-item">
+                        <span class="m-icon"><i class="fa-solid fa-location-dot"></i></span>
+                        <div>
+                            <p class="item-title">London</p>
+
+                            <p aria-checked="label-2 item-subtitle">state of London,GB</p>
+                        </div>
+
+                        <a href="#" class="item-link has-state"></a>
+                      </li>
+
+                   </ul> -->
+
+
+                   </div>
+            </div>
+           </div>
+
+         
+
+           <div class="header-actions">
+
+               <button class="icon-btn has-state">
+                   <span class="m-icon btn"><i class="fa-solid fa-magnifying-glass" btn></i></span>
+               </button>
+               <a href="/current-location" class="btn-primary has-state" data-current-location-btn>
+                   <span class="m-icon"><i class="fa-solid fa-location-crosshairs" disabled></i></span>
+
+                   <span class="span">Current Location</span>
+               </a>
+           </div>
+
+
+       </div>
+   </div>
+
+<!-- main -->
+  <main>
+
+   <article class="container" data-container>
+<!-- left -->
+       <div class="content-left">
+           <!-- current weather -->
+           <section class="section current-weather" aria-label="current weather" data-current-weather>
+               <div class="card card-lg current-weather-card">
+
+                 <h2 class="title-2 card-title">Now</h2>
+                 
+                 <div class="weapper">
+                   <p class="heading"><span  id="temp"></span>&deg;<sup>c</sup></p>
+
+                   <img id="icon" src="./assets/images/weather_icons/01d.png"
+                    width="64" height="64" alt="Ovecast clouds" class="weather-icon">
+
+                 </div>
+
+                 <p class="body-3" id="overcast">Overcast cloud</p>
+
+                 <ul class="meta-list">
+
+                   <li class="meta-item">
+                       <span class="m-icon"><i class="fa-regular fa-calendar"></i></span>
+                       <p class="meta-text" id="time">Thursday 13, dec</p>
+                   </li>
+
+                   <li class="meta-item">
+                       <span class="m-icon"><i class="fa-solid fa-location-dot"></i></i></span>
+                       <p class="meta-text" id="cityname">Delhi</p>
+                   </li>
+
+                 </ul>
+
+               </div>
+           </section>
+
+
+
+           <!-- 5Forcast -->
+           <section class=" section forcast" data-5-day-forecast>
+               <h2 class="title-2" id="forecast-label">5 Days Forecast</h2>
+
+               <div class="card card-lg current-weather-card">
+               
+               <ul>
+
+                   <li class="card-item">
+
+                       <div class="icon-wrapper">
+                           <img src="./assets/images/weather_icons/01n.png" width="36" height="36" 
+                           alt="Overcast cloud" class="weather-icon weather-img">
+
+                           <span class="spna">
+                               <p class="title-2" id="day1temp">25</p>
+                           </span>
+
+                       </div>
+
+                       <p class="label-1 date" id="date1"> 13 Deb</p>
+                       <p class="label-1 week"> friday</p>
+
+                   </li>
+
+
+                   <li class="card-item">
+
+                       <div class="icon-wrapper">
+                           <img src="./assets/images/weather_icons/01n.png" width="36" height="36" 
+                           alt="Overcast cloud" class="weather-icon weather-img">
+
+                           <span class="spna">
+                               <p class="title-2" id="day2temp">25</p>
+                           </span>
+
+                       </div>
+
+                       <p class="label-1 date" id="date2"> 13 Deb</p>
+                       <p class="label-1 week"> friday</p>
+
+                   </li>
+
+
+                   <li class="card-item">
+
+                       <div class="icon-wrapper">
+                           <img src="./assets/images/weather_icons/01n.png" width="36" height="36" 
+                           alt="Overcast cloud" class="weather-icon weather-img">
+
+                           <span class="spna">
+                               <p class="title-2" id="day3temp">25</p>
+                           </span>
+
+                       </div>
+
+                       <p class="label-1 date" id="date3"> 13 Deb</p>
+                       <p class="label-1 week"> friday</p>
+
+                   </li>
+
+
+                   <li class="card-item">
+
+                       <div class="icon-wrapper">
+                           <img src="./assets/images/weather_icons/01n.png" width="36" height="36" 
+                           alt="Overcast cloud" class="weather-icon weather-img">
+
+                           <span class="spna">
+                               <p class="title-2" id="day4temp">25</p>
+                           </span>
+
+                       </div>
+
+                       <p class="label-1 date" id="date4"> 13 Deb</p>
+                       <p class="label-1 week"> friday</p>
+
+                   </li>
+
+                   <li class="card-item">
+
+                       <div class="icon-wrapper">
+                           <img src="./assets/images/weather_icons/01n.png" width="36" height="36" 
+                           alt="Overcast cloud" class="weather-icon weather-img">
+
+                           <span class="spna">
+                               <p class="title-2" id="day5temp">25</p>
+                           </span>
+
+                       </div>
+
+                       <p class="label-1 date" id="date5"> 13 Deb</p>
+                       <p class="label-1 week"> friday</p>
+
+                   </li>
+
+               </ul>
+               
+               </div>
+
+           </section>
+
+
+       </div>
+
+
+
+
+       <!-- right -->
+       <div class="content-right">
+
+           <!-- highlights -->
+
+
+           <section class="section highlights" data-highlights>
+               <div class="card card-lg">
+
+                   <h2 class="title-2" id="highlights-label">Todays Highlights</h2>
+
+                   <div class="highlight-list">
+
+                       <!-- <div class="card card-sm highlight-card one">
+
+                           <h3 class="title-3">Air Quality Index</h3>
+
+                           <div class="wrapper">
+                               <div class="m-icon"><img src="./assets/images/air.png" alt=""></div>
+
+                               <ul class="card-list">
+
+                                   <li class="card-item">
+                                       <p class="title-1">23.3</p>
+
+                                       <p class="label-1">PM <sub>2.5</sub></p>
+
+                                   </li>
+
+                                   <li class="card-item">
+                                       <p class="title-1">23.3</p>
+
+                                       <p class="label-1">PM <sub>2.5</sub></p>
+
+                                   </li>
+
+                                   <li class="card-item">
+                                       <p class="title-1">23.3</p>
+
+                                       <p class="label-1">PM <sub>2.5</sub></p>
+
+                                   </li>
+
+                                   <li class="card-item">
+                                       <p class="title-1">23.3</p>
+
+                                       <p class="label-1">PM <sub>2.5</sub></p>
+
+                                   </li>
+
+                               </ul>
+
+                           </div>
+
+                           <span class="badge aqi-1 label-1" title="aqi-message">Good</span>
+
+                       </div> -->
+
+                       <div class="card card-sm highlight-card two">
+                           <h3 class="title-3">Sunrise & Sunset</h3>
+
+                           <div class="card-list">
+
+                               <div class="card-item">
+                                   <span class="m-icon"><i class="fa-solid fa-cloud-sun"></i></span>
+
+                                   <div>
+                                       <p class="label-1">Sunrise</p>
+                                       <p class="title-1" id="sunrise">6:30</p>
+                                   </div>
+
+                               </div>
+
+                               <div class="card-item">
+                                   <span class="m-icon"><i class="fa-solid fa-moon"></i></span>
+
+                                   <div>
+                                       <p class="label-1">Sunset</p>
+                                       <p class="title-1" id="sunset" >5:45</p>
+                                   </div>
+
+                               </div>
+
+                           </div>
+
+                       </div>
+
+                       <div class="card card-sm highlight-card">
+                           <h3 class="title-3">Humidity</h3>
+                           <div class="wrapper">
+                               <span class="m-icon"><i class="fa-solid fa-droplet"></i></span>
+
+                               <p class="title-1" style="display: flex;"><span id="humidity">35</span><sub>%</sub>
+                                 </p>
+                           </div>
+                       </div>
+
+                       <div class="card card-sm highlight-card">
+                           <h3 class="title-3">Pressure</h3>
+                           <div class="wrapper">
+                               <span class="m-icon"><img src="./assets/images/weather_icons/50d.png" width="24px" alt=""></span>
+
+                               <p class="title-1" id="pressure">1052 <sub>hpa</sub></p>
+                           </div>
+                       </div>
+
+
+                       <div class="card card-sm highlight-card">
+                           <h3 class="title-3">Visibility</h3>
+                           <div class="wrapper">
+                               <span class="m-icon"><i class="fa-solid fa-eye"></i></span>
+
+                               <p class="title-1" id="visibility">10 <sub>km</sub></p>
+                           </div>
+                       </div>
+
+                       <div class="card card-sm highlight-card">
+                           <h3 class="title-3">Feels Like</h3>
+                           <div class="wrapper">
+                               <span class="m-icon"><i class="fa-solid fa-temperature-low"></i></span>
+
+                               <p class="title-1" style="display: flex;">
+                                   <span id="feels-like"></span>&deg;<sup>c</sup></p>
+                           </div>
+                       </div>
+
+                       <!-- last card -->
+                       <div class="card card-sm highlight-card">
+                           <h3 class="title-3">in/ax</h3>
+                           <div class="wrapper">
+                               <span class="m-icon"><i class="fa-solid fa-temperature-empty"></i></span>
+
+                               <p class="title-1" style="display: flex;">
+                                   <span id="min-max"></p>
+                           </div>
+                       </div>
+
+
+
+                   </div>
+
+               </div>
+           </section>
+
+
+           <!-- hourly forecast -->
+
+           <div class="section hourly-forecast" data-hourly-forecast>
+               <h2 class="title-2">Today at</h2>
+
+               <div class="slider-container">
+
+                   <ul class="slider-list">
+
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+
+                               <p class="body-3" id="timesec1" >03 PM</p>
+
+                               <img id="image1" src="./assets/images/weather_icons/01n.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="hour1">25&deg;</p>
+
+                           </div>
+                       </li>
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+
+                               <p class="body-3" id="timesec2">03 PM</p>
+
+                               <img id="image2" src="./assets/images/weather_icons/01n.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="hour2">25&deg;</p>
+
+                           </div>
+                       </li>
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+
+                               <p class="body-3" id="timesec3">03 PM</p>
+
+                               <img id="image3" src="./assets/images/weather_icons/01n.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="hour3">25&deg;</p>
+
+                           </div>
+                       </li>
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+
+                               <p class="body-3" id="timesec4">03 PM</p>
+
+                               <img id="image4" src="./assets/images/weather_icons/01n.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="hour4">25&deg;</p>
+
+                           </div>
+                       </li>
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+
+                               <p class="body-3" id="timesec5">03 PM</p>
+
+                               <img id="image5" src="./assets/images/weather_icons/01n.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="hour5">25&deg;</p>
+
+                           </div>
+                       </li>
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+
+                               <p class="body-3" id="timesec6">03 PM</p>
+
+                               <img id="image6" src="./assets/images/weather_icons/01n.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="hour6">25&deg;</p>
+
+                           </div>
+                       </li>
+
+                   </ul>
+
+                   <ul class="slider-list">
+
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+                               <p class="body-3" id="windtime1" >03 PM</p>
+
+                               <img src="./assets/images/weather_icons/direction.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="wind1">12 km/h</p>
+                           </div>
+                       </li>
+
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+                               <p class="body-3" id="windtime2" >03 PM</p>
+
+                               <img src="./assets/images/weather_icons/direction.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="wind2">12 km/h</p>
+                           </div>
+                       </li>
+
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+                               <p class="body-3" id="windtime3" >03 PM</p>
+
+                               <img src="./assets/images/weather_icons/direction.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="wind3">12 km/h</p>
+                           </div>
+                       </li>
+
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+                               <p class="body-3" id="windtime4" >03 PM</p>
+
+                               <img src="./assets/images/weather_icons/direction.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="wind4">12 km/h</p>
+                           </div>
+                       </li>
+
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+                               <p class="body-3" id="windtime5">03 PM</p>
+
+                               <img src="./assets/images/weather_icons/direction.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="wind5">12 km/h</p>
+                           </div>
+                       </li>
+
+                       <li class="slider-item">
+                           <div class="card card-sm slider-card">
+                               <p class="body-3" id="windtime6" >03 PM</p>
+
+                               <img src="./assets/images/weather_icons/direction.png" width="48" height="48"
+                               class="weather-icon" alt="">
+
+                               <p class="body-3" id="wind6">12 km/h</p>
+                           </div>
+                       </li>
+
+
+                   </ul>
+
+               </div>
+
+           </div>
+
+
+
+                     <!-- footer -->
+              <div class="footer">
+   <h2 class="card">Daily weather</h2>
+                </div>
+
+       </div>
+
+    
+       <div class="loading" data-loading></div>
+
+   </article>
+  </main>
+
+
+  <section class="error-content">
+   <h2 class="heading">404</h2>
+   
+   <p class="body-1">Page not found</p>
+
+   <a href="" class="btn-primary">
+       <span class="spna">Go Home </span>
+   </a>
+
+  </section>
+
+
+
+  <!-- <script src="./assets/js/api.js" typ="module"></script> -->
+  <!-- <script src="./assets/js/module.js"></script> -->
+   <!-- <script src="./assets/js/route.js" typ="module"></script> -->
+
+
+
+   <script src="./assets/js/app.js" typ="module"></script>
+</body>
+</html>
